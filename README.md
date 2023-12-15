@@ -62,7 +62,7 @@ GPT-1은 Transformer 아키텍처와 전이 학습의 아이디어를 통해 언
   tokenizer = GPT2Tokenizer.from_pretrained(model_name)
   model = GPT2LMHeadModel.from_pretrained(model_name)
   
-## 3. 🐱 입력값 및 모델 실행
+## 3. 입력값 및 모델 실행
 
 - **입력값 및 모델 실행 :**
   ```python
@@ -79,3 +79,10 @@ I love cats because I've been around them for a long time. I love to play with t
 ## 5. 결과해석 및 결론
 
 입력 문장에 대해 GPT-2 모델이 그럴듯한 응답을 생성한 것으로 보입니다. 모델이 주어진 문맥을 이해하고 일관된 텍스트를 생성하는 데 성공한 것으로 판단됩니다.
+
+## 6. 테스트 한계점
+이 코드는 GPT-1 모델 대신 GPT-2 모델을 사용하고 있습니다. GPT-1과 GPT-2는 구조적으로 유사하지만, 세부적인 아키텍처 및 모델 크기에서 차이가 있습니다. GPT-1에 대한 공식 라이브러리가 없기 때문에, GPT-1을 사용하는 데 필요한 모델 및 토크나이저를 찾아야 합니다.
+
+GPT-1을 사용하기 위해서는 OpenAI에서 공개한 모델 가중치와 토크나이저를 이용해야 합니다. 그러나 현재까지로는 GPT-1의 가중치를 공식적으로 제공하지 않아서 사용이 제한적입니다. GPT-2 모델의 경우 Hugging Face Transformers 라이브러리를 사용하였지만, GPT-1은 해당 라이브러리에 포함되어 있지 않습니다.
+
+만약 GPT-1을 사용하려면, OpenAI에서 제공하는 GPT-1 모델 가중치를 직접 다운로드하고, 해당 모델에 대한 토크나이저를 구현하여 사용해야 합니다. 하지만 이러한 작업은 조금 복잡하며, GPT-1이 GPT-2보다 성능이 좋지 않을 수 있으므로 주의가 필요합니다.
